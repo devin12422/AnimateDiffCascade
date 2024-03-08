@@ -28,6 +28,10 @@ class InflatedGroupNorm(nn.GroupNorm):
 
         return x
 
+#    def forward(self, x):
+#        x = x.permute(0, 2, 3, 1)
+#        x = super().forward(x)
+#        return x.permute(0, 3, 1, 2)
 
 class Upsample3D(nn.Module):
     def __init__(self, channels, use_conv=False, use_conv_transpose=False, out_channels=None, name="conv"):
